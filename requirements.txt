@@ -11,3 +11,4 @@ streamlit
 joblib
 pickle
 time
+json
