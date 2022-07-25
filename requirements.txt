@@ -1,6 +1,7 @@
 flask
 gunicorn
 numpy
+pickle5
 pandas
 lightgbm
 matplotlib
@@ -8,6 +9,5 @@ dill
 seaborn
 streamlit
 joblib
-pickle
 time
 json
