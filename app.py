@@ -65,4 +65,4 @@ def get_image():
 
 
 if __name__ == "__main__":
-    predict(100009)
+    app.run(debug=True)

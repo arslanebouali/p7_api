@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da43f250-92bc-4c77-ac5b-1a225a7efc90" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Utils/predicter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/predicter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +172,7 @@
       <option name="presentableId" value="Default" />
       <updated>1658756442381</updated>
       <workItem from="1658756443574" duration="13150000" />
-      <workItem from="1658772607831" duration="1663000" />
+      <workItem from="1658772607831" duration="4241000" />
     </task>
     <servers />
   </component>

@@ -5,7 +5,7 @@ Created on Tue Apr 12 13:17:52 2022
 
 """
 
-from main import app
+from app.main import app
 
 if __name__ == "__main__":
     app.run()
