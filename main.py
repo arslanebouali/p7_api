@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 import joblib
+import json
 #import lime
 import time
 #from lime import lime_text
@@ -40,7 +41,26 @@ def predict(id_client):
     prediction,proba = predictor.predict(client_full_predict)
     explainer_model = predictor.explain(client_full)
 
-    return prediction , proba , explainer_model
+
+
+
+
+    dict={"proba": proba.tolist(),
+          "prediction " : prediction.tolist()}
+
+    resp = jsonify(dict)
+    resp.status_code = 200
+    print(resp)
+    return resp
+
+from flask import send_file
+
+@app.route('/get_image/<id_client>')
+def get_image():
+    client_full, client_full_predict = Data.full_records(id_client)
+
+    explain(client_full)
+    return send_file(filename, mimetype='image/gif')
 
 
 

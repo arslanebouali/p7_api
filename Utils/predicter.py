@@ -20,6 +20,8 @@ class PipelinePredictor():
         explainer = self.explainer
         model = self.model
         exp = explainer.explain_instance(record, model.predict_proba)
+        fig = exp
+
 
 if __name__ == "__main__":
     full_model = ('models/lgbm_full_model.sav')
