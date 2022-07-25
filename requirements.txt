@@ -2,7 +2,6 @@ flask
 gunicorn
 numpy
 pandas
-pickle5
 lightgbm
 matplotlib
 dill
