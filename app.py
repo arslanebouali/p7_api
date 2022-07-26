@@ -39,8 +39,6 @@ def predict(id_client):
 
 
     prediction,proba = predictor.predict(client_full_predict)
-    explainer_model = predictor.explain(client_full)
-
 
 
 
@@ -55,12 +53,13 @@ def predict(id_client):
 
 from flask import send_file
 
-@app.route('/get_image/<id_client>')
-def get_image():
+@app.route('/explain/<id_client>')
+def get_image(id_client):
     client_full, client_full_predict = Data.full_records(id_client)
 
-    explain(client_full)
-    return send_file(filename, mimetype='image/gif')
+    predictor.explain(client_full)
+    filename= 'data/explanation.html'
+    return send_file(filename, mimetype='html')
 
 
 

@@ -20,11 +20,12 @@ class PipelinePredictor():
         explainer = self.explainer
         model = self.model
         exp = explainer.explain_instance(record, model.predict_proba)
-        fig = exp
-
+        exp.save_to_file('data/explanation.html', labels=None, predict_proba=True, show_predicted_value=True)
+        print("explanation is ready ")
 
 if __name__ == "__main__":
     full_model = ('models/lgbm_full_model.sav')
     model = ('models/lgbm_model.sav')
     explainer = ('models/lime_explainer.pkl')
     PipelinePredictor(model_path=model,explainer_path=explainer)
+

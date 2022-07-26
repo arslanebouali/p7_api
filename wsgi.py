@@ -1,11 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Apr 12 13:17:52 2022
-
-
-"""
-
-from app.main import app
+from app import app
 
 if __name__ == "__main__":
     app.run()
