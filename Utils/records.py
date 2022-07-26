@@ -9,6 +9,7 @@ class data():
         self.prepared= pd.read_csv(prepared_record_df,index_col='SK_ID_CURR').drop(['Unnamed: 0'], axis=1)
         if 'Unnamed: 0' in self.prepared.columns:
             self.prepared.drop(['Unnamed: 0'],axis=1
+        else
 
 
 
