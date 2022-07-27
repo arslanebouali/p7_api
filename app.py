@@ -1,15 +1,4 @@
 from Utils.predicter import PipelinePredictor
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import streamlit as st
-import joblib
-import json
-#import lime
-import time
-#from lime import lime_text
-#import lime.lime_tabular
 from flask import Flask, request, jsonify, render_template
 from Utils.records import data
 from Utils.Tools import *
