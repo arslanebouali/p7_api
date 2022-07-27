@@ -4,12 +4,7 @@ class data():
 
     def __init__(self,  full_record_df = 'data/df_red.csv' , prepared_record_df = 'data/df_prepared.csv'):
 
-        try:
-            self.full= pd.read_csv(full_record_df,header=0,sep=',').drop(['Unnamed: 0','TARGET'], axis=1)
-        except ValueError:
-            print(pd.read_csv(full_record_df,header=0,sep=',').columns)
-
-
+        self.full= pd.read_csv(full_record_df,header=0,sep=',').drop(['Unnamed: 0','TARGET'], axis=1)
 
         if 'TARGET' in self.full.columns:
             self.full.drop(['Unnamed: 0'],axis=1)
