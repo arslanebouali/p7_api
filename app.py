@@ -12,6 +12,7 @@ import time
 #import lime.lime_tabular
 from flask import Flask, request, jsonify, render_template
 from Utils.records import data
+from Utils.Tools import *
 import pickle
 
 full_model=('models/lgbm_full_model.sav')
@@ -57,11 +58,28 @@ from flask import send_file
 def get_image(id_client):
     client_full, client_full_predict = Data.full_records(id_client)
 
-    predictor.explain(client_full)
-    filename= 'data/explanation.html'
+    exp=predictor.explanation(client_full)
+    predictor.explain(exp)
+    filename= 'data/explanation.txt'
     return send_file(filename, mimetype='html')
 
+@app.route('/df_maps/<id_client>', methods=['GET'])
+def get_maps(id_client):
+    client_full, client_full_predict = Data.full_records(id_client)
+    exp = predictor.explanation(client_full)
+    df_map_filtered_plus, df_map_filtered_neg = model_local_interpretation(exp)
+    df = Data.Target
 
+    df_map_filtered_plus = fonction_comparaison(df_map_filtered_plus, df, id_client, df)
+    df_map_filtered_neg = fonction_comparaison(df_map_filtered_neg, df, id_client, df)
+
+    dict = {"filtered_plus": df_map_filtered_plus.to_json(),
+            "filtered_neg": df_map_filtered_neg.to_json()}
+
+    resp = jsonify(dict)
+
+    print(resp)
+    return resp
 
 if __name__ == "__main__":
     app.run(debug=True)
