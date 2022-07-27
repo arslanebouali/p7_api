@@ -3,14 +3,14 @@ import pandas as pd
 class data():
 
     def __init__(self,  full_record_df = 'data/df_red.csv' , prepared_record_df = 'data/df_prepared.csv'):
-        self.full= pd.read_csv(full_record_df).drop(['Unnamed: 0','TARGET'], axis=1)
+        self.full= pd.read_csv(full_record_df,header=0,sep=',').drop(['Unnamed: 0','TARGET'], axis=1)
 
         if 'TARGET' in self.full.columns:
             self.full.drop(['Unnamed: 0'],axis=1)
 
-        self.prepared = pd.read_csv(prepared_record_df,index_col='SK_ID_CURR').drop(['Unnamed: 0','TARGET'], axis=1)
+        self.prepared = pd.read_csv(prepared_record_df,index_col='SK_ID_CURR',header=0,sep=',').drop(['Unnamed: 0','TARGET'], axis=1)
 
-        self.Target = pd.read_csv(full_record_df).drop(['Unnamed: 0'], axis=1)
+        self.Target = pd.read_csv(full_record_df,header=0,sep=',').drop(['Unnamed: 0'], axis=1)
         
 
         
